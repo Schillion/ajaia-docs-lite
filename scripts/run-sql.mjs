@@ -6,7 +6,27 @@
  * Connection string -> URI). Used by `npm run db:migrate` / `npm run db:seed`.
  */
 import { readFile } from "node:fs/promises";
+import { existsSync, readFileSync } from "node:fs";
 import { Client } from "pg";
+
+/** Minimal .env.local loader so this script works without a dotenv dependency. */
+function loadEnvLocal() {
+  const path = new URL("../.env.local", import.meta.url);
+  if (!existsSync(path)) return;
+
+  const contents = readFileSync(path, "utf8");
+  for (const line of contents.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const eq = trimmed.indexOf("=");
+    if (eq === -1) continue;
+    const key = trimmed.slice(0, eq).trim();
+    const value = trimmed.slice(eq + 1).trim();
+    if (!(key in process.env)) process.env[key] = value;
+  }
+}
+
+loadEnvLocal();
 
 const [, , sqlPath] = process.argv;
 

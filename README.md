@@ -5,6 +5,11 @@ focused full-stack assessment project. It demonstrates document creation and
 rich-text editing, file import, ownership-based sharing, persistent storage,
 and server-enforced access control, with a coherent, product-quality UX.
 
+> See also: [`ARCHITECTURE.md`](ARCHITECTURE.md) (standalone architecture
+> note), [`AI_WORKFLOW.md`](AI_WORKFLOW.md) (standalone AI workflow note),
+> and [`SUBMISSION.md`](SUBMISSION.md) (what's included, deployment status,
+> what's working/incomplete).
+
 ## 1. Project overview
 
 Ajaia Docs Lite lets a small set of seeded demo users create and edit rich-text
