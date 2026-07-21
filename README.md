@@ -19,8 +19,7 @@ server — the UI never relies on hiding buttons to enforce access.
 
 ## 2. Live demo
 
-> Live demo URL: _add your Vercel deployment URL here after deploying (see
-> [Deployment](#16-deployment-instructions-for-vercel))._
+https://ajaia-docs-lite-b1el.vercel.app/
 
 ## 3. Demo users & instructions
 
